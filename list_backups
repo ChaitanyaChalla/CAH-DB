@@ -1,0 +1,13 @@
+#!/usr/bin/ksh
+#
+# Simple script to List the last 10 backups
+#
+#
+#
+
+database=${1:-$DB2DBDFT}
+
+db2 +o connect to ${database}
+db2 -t -f /home/dbadmin/scripts/list_backups.sql
+db2 +o terminate
+
